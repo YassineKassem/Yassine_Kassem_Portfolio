@@ -1,0 +1,56 @@
+---
+title: "Car Penalty Management System"
+publishedAt: "2024-06-03"
+summary: "Smart Penalty Management System: AI-Driven Automation and Analytics for Traffic Violation Handling"
+images:
+  - "/images/projects/project-01/cap1.png"
+  - "/images/projects/project-01/cap2.png"
+  - "/images/projects/project-01/cap3.png"
+  - "/images/projects/project-01/cap4.png"
+  - "/images/projects/project-01/cap5.png"
+  - "/images/projects/project-01/cap6.png"
+team:
+  - name: "Yassine Kassem"
+    role: "Data scientist"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/yassine-kassem/"
+---
+
+## Overview
+
+The penalty management solution is a flexible, AI-driven application designed to automate and streamline the management of traffic violations. It ensures efficient extraction of penalty data, determines the responsible party, and provides a user-friendly dashboard with advanced analytics for decision-making. The solution aims to enhance accessibility, transparency, and operational efficiency.
+## Key Features
+
+- **Real-Time Data Integration**: <br/>Automated insertion of scanned penalty records into a centralized database.<br/>
+Minimized manual intervention with automated data extraction and preprocessing.
+- **Enhanced Document Processing**: <br/>Leveraged MobileNetV3-Large for accurate document segmentation.<br/>
+Integrated preprocessing steps like corner point organization and perspective transformation.
+- **Advanced Region Detection**: <br/>Utilized ORB for keypoint extraction and IoU for bounding box alignment.<br/>Enhanced detection accuracy with custom annotation and parsing methods.
+- **Advanced Region Detection**: <br/>Deployed OCR tools (OCR Space API) for robust text recognition.<br/>
+Customized regex patterns to extract critical data fields from penalties.
+- **Data Matching and Analytics**: <br/>Matched penalty data with vehicle information in CSV databases.<br/>
+Delivered statistical insights into violation frequencies by region.
+- **Interactive Dashboard**: <br/>User-friendly interface for SPN administrators.<br/>Real-time analytics and visualization of violation trends across Swiss regions.
+
+## Technologies Used
+
+- **Deep Learning**: MobileNetV3-Large for segmentation.
+- **Computer Vision**: ORB, IoU, and Canny edge detection for region detection.
+- **OCR Tools**: OCR Space API for high-accuracy text extraction.
+- **Programming Languages**: Flask for implementation and integration.
+- **Libraries**:  PyTorch, OpenCV, Pytesseract.
+- **Data Handling**: Pandas for CSV processing; Regex for data extraction.
+- **Visualization**: Matplotlib, Plotly for dashboards and analytics.
+## Challenges and Learnings
+
+Handling complex document layouts and inconsistent text orientations posed significant difficulties during the development process. Traditional preprocessing methods struggled to adapt to various document structures, which led to inefficiencies and inaccuracies in extracting relevant information. Additionally, ensuring high accuracy in OCR-based data extraction across diverse document formats required addressing issues like varying image qualities, text orientations, and noise levels. Region detection also presented challenges, as image transformations, such as scaling or rotation, often resulted in unstable keypoints and misaligned bounding boxes, reducing the reliability of existing methods.
+
+## Outcome
+
+The solution achieved significant efficiency gains by automating key processes, including data extraction and matching, drastically reducing the manual effort required. Improved document segmentation and text recognition accuracy minimized errors, ensuring reliable extraction of critical details from diverse document formats. The development of an intuitive and user-friendly dashboard empowered SPN administrators with real-time analytics, facilitating better and faster decision-making. Furthermore, the system demonstrated scalability by accommodating a wide range of document types and regional requirements, making it a versatile tool for managing penalties effectively.
+
+
+
+
+
+
