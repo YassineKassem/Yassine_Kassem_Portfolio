@@ -106,37 +106,51 @@ export default function About(
             <Flex
                 fillWidth
                 mobileDirection="column" justifyContent="center">
-                { about.avatar.display && (
-                    <Flex
-                        className={styles.avatar}
-                        minWidth="160" paddingX="l" paddingBottom="xl" gap="m"
-                        flex={3} direction="column" alignItems="center">
-                        <Avatar
-                            src={person.avatar}
-                            size="xl"/>
-                        <Flex
-                            gap="8"
-                            alignItems="center">
-                            <Icon
-                                onBackground="accent-weak"
-                                name="globe"/>
-                            {person.location}
-                        </Flex>
-                        { person.languages.length > 0 && (
-                            <Flex
-                                wrap
-                                gap="8">
-                                {person.languages.map((language, index) => (
-                                    <Tag
-                                        key={index}
-                                        size="l">
-                                        {language}
-                                    </Tag>
-                                ))}
-                            </Flex>
-                        )}
-                    </Flex>
-                )}
+{about.avatar.display && (
+    <Flex
+        className={styles.avatar}
+        minWidth="160" paddingX="l" paddingBottom="xl" gap="m"
+        flex={3} direction="column" alignItems="center">
+        <Avatar
+            src={person.avatar}
+            size="xl" />
+        <Flex
+            gap="8"
+            alignItems="center">
+            <Icon
+                onBackground="accent-weak"
+                name="globe" />
+            {person.location}
+        </Flex>
+        {person.languages.length > 0 && (
+            <Flex
+                wrap
+                gap="8">
+                {person.languages.map((language, index) => (
+                    <Tag
+                        key={index}
+                        size="l">
+                        {language}
+                    </Tag>
+                ))}
+            </Flex>
+        )}
+        {/* Phone number */}
+        {person.number && (
+    <Text
+        variant="body-default-m"
+        paddingTop="m">
+        <Text
+            as="span"
+            style={{ color: 'white' }}>
+            📱
+        </Text>
+        {' '}{person.number}
+    </Text>
+)}
+    </Flex>
+)}
+
                 <Flex
                     className={styles.blockAlign}
                     fillWidth flex={9} maxWidth={40} direction="column">
@@ -289,38 +303,60 @@ export default function About(
                         </>
                     )}
 
-                    { about.studies.display && (
-                        <>
-                            <Heading
-                                as="h2"
-                                id={about.studies.title}
-                                variant="display-strong-s"
-                                marginBottom="m">
-                                {about.studies.title}
-                            </Heading>
-                            <Flex
-                                direction="column"
-                                fillWidth gap="l" marginBottom="40">
-                                {about.studies.institutions.map((institution, index) => (
-                                    <Flex
-                                        key={`${institution.name}-${index}`}
-                                        fillWidth gap="4"
-                                        direction="column">
-                                        <Text
-                                            id={institution.name}
-                                            variant="heading-strong-l">
-                                            {institution.name}
-                                        </Text>
-                                        <Text
-                                            variant="heading-default-xs"
-                                            onBackground="neutral-weak">
-                                            {institution.description}
-                                        </Text>
-                                    </Flex>
-                                ))}
-                            </Flex>
-                        </>
+{about.studies.display && (
+    <>
+        <Heading
+            as="h2"
+            id={about.studies.title}
+            variant="display-strong-s"
+            marginBottom="m">
+            {about.studies.title}
+        </Heading>
+        <Flex
+            direction="column"
+            fillWidth gap="l" marginBottom="40">
+            {about.studies.institutions.map((institution, index) => (
+                <Flex
+                    key={`${institution.name}-${index}`}
+                    fillWidth gap="4"
+                    direction="column">
+                    <Text
+                        id={institution.name}
+                        variant="heading-strong-l">
+                        {institution.name}
+                    </Text>
+                    <Text
+                        variant="heading-default-xs"
+                        onBackground="neutral-weak">
+                        {institution.description}
+                    </Text>
+                    {institution.images && institution.images.length > 0 && (
+                        <Flex
+                            fillWidth paddingTop="m" gap="12"
+                            wrap>
+                            {institution.images.map((image, index) => (
+                                <Flex
+                                    key={index}
+                                    border="neutral-medium"
+                                    borderStyle="solid-1"
+                                    radius="m"
+                                    minWidth={image.width} height={image.height}>
+                                    <SmartImage
+                                        enlarge
+                                        radius="m"
+                                        sizes={image.width.toString()}
+                                        alt={image.alt}
+                                        src={image.src}/>
+                                </Flex>
+                            ))}
+                        </Flex>
                     )}
+                </Flex>
+            ))}
+        </Flex>
+    </>
+)}
+
 
                     { about.technical.display && (
                         <>

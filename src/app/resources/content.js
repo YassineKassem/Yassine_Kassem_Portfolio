@@ -9,7 +9,8 @@ const person = {
     role:      'Data Scientist & Full stack web mobile developer',
     avatar:    '/images/avatar.jpg',
     location:  'Africa/Tunis',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: ['English', 'French']  // optional: Leave the array empty if you don't want to display languages
+    languages: ['English', 'French'], // optional: Leave the array empty if you don't want to display languages
+    number: '+216 92661515'
 }
 
 // const newsletter = {
@@ -170,10 +171,24 @@ const about = {
             {
                 name: 'Private Higher School of Engineering and Technology ESPRIT',
                 description: <>Studied software engineering with a focus on Data Science</>,
+                images: [ // optional: leave the array empty if you don't want to display images
+                    {
+                        src: '/images/university/logo-esprit-2.b8fedba0.png',
+                        alt: 'Project image',
+                        width: 16,
+                        height: 9
+                    }]
             },
             {
                 name: 'Higher Institute of Information and Communication Technologies',
                 description: <>Computer Science, specializing in Software Engineering and Information Systems</>,
+                images: [ // optional: leave the array empty if you don't want to display images
+                    {
+                        src: '/images/university/istic.png',
+                        alt: 'Project image',
+                        width: 16,
+                        height: 9
+                    }]
             }
         ]
     },
