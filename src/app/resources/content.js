@@ -8,7 +8,7 @@ const person = {
     get name() {
         return `${this.firstName} ${this.lastName}`;
     },
-    role:      'Data Scientist & Full stack web mobile developer',
+    role:      'Data Scientist',
     avatar:    '/images/avatar.jpg',
     location:  'Africa/Tunis',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
     languages: ['English', 'French'], // optional: Leave the array empty if you don't want to display languages
@@ -51,7 +51,7 @@ const home = {
     label: 'Home',
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Data Scientist & Full stack web mobile developer</>,
+    headline: <>Data Scientist</>,
     subline: <>Data Scientist and full-stack web and mobile developer in my 3rd year of the Engineering Cycle in Data Science,
     dynamic, curious, and autonomous. I am currently enhancing my skills in Data Science and software development. I
     have experience in programming and seek opportunities to apply my skills in innovative projects.</>

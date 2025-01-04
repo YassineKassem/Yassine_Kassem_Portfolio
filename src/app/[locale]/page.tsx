@@ -1,19 +1,15 @@
 import React from 'react';
 
-import { Heading, Flex, Text, Button,  Avatar, RevealFx, Arrow } from '@/once-ui/components';
-import { Projects } from '@/components/work/Projects';
-
-import { baseURL, routes, renderContent } from '@/app/resources'; 
-import { Mailchimp } from '@/components';
-import { Posts } from '@/components/blog/Posts';
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow } from '@/once-ui/components';
+import { baseURL, renderContent } from '@/app/resources';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 
 export async function generateMetadata(
-	{params: {locale}}: { params: { locale: string }}
+	{ params: { locale } }: { params: { locale: string } }
 ) {
 	const t = await getTranslations();
-    const { home } = renderContent(t);
+	const { home } = renderContent(t);
 	const title = home.title;
 	const description = home.description;
 	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
@@ -43,15 +39,20 @@ export async function generateMetadata(
 }
 
 export default function Home(
-	{ params: {locale}}: { params: { locale: string }}
+	{ params: { locale } }: { params: { locale: string } }
 ) {
 	unstable_setRequestLocale(locale);
 	const t = useTranslations();
 	const { home, about, person } = renderContent(t);
+
 	return (
 		<Flex
-			maxWidth="m" fillWidth gap="xl"
-			direction="column" alignItems="center">
+			maxWidth="m"
+			fillWidth
+			gap="xl"
+			direction="column"
+			alignItems="center"
+		>
 			<script
 				type="application/ld+json"
 				suppressHydrationWarning
@@ -76,79 +77,93 @@ export default function Home(
 			/>
 			<Flex
 				fillWidth
-				direction="column"
-				paddingY="l" gap="m">
-					<Flex
-						direction="column"
-						fillWidth maxWidth="s">
-						<RevealFx
-							translateY="4" fillWidth justifyContent="flex-start" paddingBottom="m">
-							<Heading
-								wrap="balance"
-								variant="display-strong-l">
-								{home.headline}
-							</Heading>
-						</RevealFx>
-						<RevealFx
-							translateY="8" delay={0.2} fillWidth justifyContent="flex-start" paddingBottom="m">
-							<Text
-								wrap="balance"
-								onBackground="neutral-weak"
-								variant="heading-default-xl">
-								{home.subline}
-							</Text>
-						</RevealFx>
-						<RevealFx translateY="12" delay={0.4}>
-							<Flex fillWidth>
-								<Button
-									id="about"
-									data-border="rounded"
-									href={`/${locale}/about`}
-									variant="tertiary"
-									size="m">
-									<Flex
-										gap="8"
-										alignItems="center">
-										{about.avatar.display && (
-											<Avatar
-												style={{marginLeft: '-0.75rem', marginRight: '0.25rem'}}
-												src={person.avatar}
-												size="m"/>
-											)}
-											{t("about.title")}
-											<Arrow trigger="#about"/>
-									</Flex>
-								</Button>
-							</Flex>
-						</RevealFx>
-					</Flex>
-				
-			</Flex>
-			<RevealFx translateY="16" delay={0.6}>
-				<Projects range={[1,1]} locale={locale}/>
-			</RevealFx>
-			{/* {routes['/blog'] && (
+				direction="row" // Align text and image in a row
+				gap="l"
+				justifyContent="space-between"
+				alignItems="center"
+				paddingY="l"
+			>
+				{/* Left Section: Text Content */}
 				<Flex
-					fillWidth gap="24"
-					mobileDirection="column">
-					<Flex flex={1} paddingLeft="l">
+					direction="column"
+					flex={2} // Adjust the space for text content
+					gap="m"
+				>
+					<RevealFx
+						translateY="4"
+						fillWidth
+						justifyContent="flex-start"
+						paddingBottom="m"
+					>
 						<Heading
-							as="h2"
-							variant="display-strong-xs"
-							wrap="balance">
-							Latest from the blog
+							wrap="balance"
+							variant="display-strong-l"
+						>
+							{home.headline}
 						</Heading>
-					</Flex>
-					<Flex
-						flex={3} paddingX="20">
-						<Posts range={[1,2]} columns="2" locale={locale}/>
-					</Flex>
+					</RevealFx>
+					<RevealFx
+						translateY="8"
+						delay={0.2}
+						fillWidth
+						justifyContent="flex-start"
+						paddingBottom="m"
+					>
+						<Text
+							wrap="balance"
+							onBackground="neutral-weak"
+							variant="heading-default-xl"
+						>
+							{home.subline}
+						</Text>
+					</RevealFx>
+					<RevealFx translateY="12" delay={0.4}>
+						<Flex fillWidth>
+							<Button
+								id="about"
+								data-border="rounded"
+								href={`/${locale}/about`}
+								variant="tertiary"
+								size="m"
+							>
+								<Flex
+									gap="8"
+									alignItems="center"
+								>
+									{about.avatar.display && (
+										<Avatar
+											style={{ marginLeft: '-0.75rem', marginRight: '0.25rem' }}
+											src={person.avatar}
+											size="m"
+										/>
+									)}
+									{t("about.title")}
+									<Arrow trigger="#about" />
+								</Flex>
+							</Button>
+						</Flex>
+					</RevealFx>
 				</Flex>
-			)} */}
-			<Projects range={[2]} locale={locale}/>
-			{/* { newsletter.display &&
-				<Mailchimp newsletter={newsletter} />
-			} */}
+
+				{/* Right Section: Image */}
+				<Flex
+    flex={1} // Adjust the space for the image
+    justifyContent="flex-end"
+    alignItems="center"
+>
+    <img
+        src="/images/home.png" // Use your image URL here
+        alt="Home"
+        style={{
+            width: '100%', // Adjust the width as needed
+            maxWidth: '500px', // Set a maximum width
+            height: 'auto', // Maintain aspect ratio
+			borderRadius: '80%', // Makes the image circular
+        }}
+    />
+</Flex>
+
+			</Flex>
 		</Flex>
 	);
 }
