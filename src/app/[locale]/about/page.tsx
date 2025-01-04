@@ -136,18 +136,27 @@ export default function About(
             </Flex>
         )}
         {/* Phone number */}
-        {person.number && (
-    <Text
-        variant="body-default-m"
-        paddingTop="m">
-        <Text
-            as="span"
-            style={{ color: 'white' }}>
-            📱
-        </Text>
-        {' '}{person.number}
-    </Text>
+        {person.numbers.length > 0 && (
+    <Flex
+        wrap
+        gap="8">
+        {person.numbers.map((number, index) => (
+            <Text
+                key={index}
+                variant="body-default-s"
+                paddingTop="s">
+                <Text
+                    as="span"
+                    style={{ color: 'white' }}>
+                    📱
+                </Text>
+                {' '}{number}
+            </Text>
+            
+        ))}
+    </Flex>
 )}
+
     </Flex>
 )}
 
