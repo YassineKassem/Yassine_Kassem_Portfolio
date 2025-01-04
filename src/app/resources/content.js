@@ -1,4 +1,6 @@
 import { InlineCode } from "@/once-ui/components";
+import { title } from "process";
+import { PiPlaceholder } from "react-icons/pi";
 
 const person = {
     firstName: 'Mohamed Yassine',
@@ -175,7 +177,7 @@ const about = {
                 images: [ // optional: leave the array empty if you don't want to display images
                     {
                         src: '/images/university/logo-esprit-2.b8fedba0.png',
-                        alt: 'Project image',
+                        alt: 'ESPRIT',
                         width: 16,
                         height: 9
                     }]
@@ -186,185 +188,178 @@ const about = {
                 images: [ // optional: leave the array empty if you don't want to display images
                     {
                         src: '/images/university/istic.png',
-                        alt: 'Project image',
+                        alt: 'ISTIC',
                         width: 16,
                         height: 9
                     }]
             }
         ]
     },
-    technical: {
-        display: true, // set to false to hide this section
-        title: 'Technical skills',
-        skills: [
-            {
-                title: 'Programming Languages:',
-                //description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-                // optional: leave the array empty if you don't want to display images
-                images: [
-                    {
-                        src: '/images/skills/prog/icons8-java-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/prog/icons8-python-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/prog/icons8-r-project-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/prog/icons8-c-programming-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/prog/icons8-dart-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/prog/icons8-javascript-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/prog/icons8-html5-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/prog/icons8-css3-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                ]
+technical: {
+    display: true, // set to false to hide this section
+    title: 'Technical skills',
+    skills: [
+        {
+            title: 'Programming Languages:',
+            images: [
+                {
+                    src: '/images/skills/prog/icons8-java-96.png',
+                    alt: 'Java',
+                    width: 4,
+                    height: 4,
+                },
+                {
+                    src: '/images/skills/prog/icons8-python-96.png',
+                    alt: 'Python',
+                    width: 4,
+                    height: 4,
+                },
+                {
+                    src: '/images/skills/prog/icons8-r-project-96.png',
+                    alt: 'R',
+                    width: 4,
+                    height: 4,
+                },
+                {
+                    src: '/images/skills/prog/icons8-c-programming-96.png',
+                    alt: 'C',
+                    width: 4,
+                    height: 4,
+                },
+                {
+                    src: '/images/skills/prog/icons8-dart-96.png',
+                    alt: 'Dart',
+                    width: 4,
+                    height: 4,
+                },
+                {
+                    src: '/images/skills/prog/icons8-javascript-96.png',
+                    alt: 'Java Script',
+                    width: 4,
+                    height: 4,
+                },
+                {
+                    src: '/images/skills/prog/icons8-html5-96.png',
+                    alt: 'HTML5',
+                    width: 4,
+                    height: 4,
+                },
+                {
+                    src: '/images/skills/prog/icons8-css3-96.png',
+                    alt: 'CSS3',
+                    width: 4,
+                    height: 4,
+                },
+            ]
+        },
+        {
+            title: 'Frameworks:',
+            images: [
+                {
+                    "src": "/images/skills/frameworks/icons8-flask-100.png",
+                    "alt": "Flask",
+                    "width": 4,
+                    "height": 4
+                },
+                {
+                    "src": "/images/skills/frameworks/FastAPI (1).png",
+                    "alt": "FastAPI",
+                    "width": 4,
+                    "height": 4
+                },
+                {
+                    "src": "/images/skills/frameworks/icons8-bootstrap-96.png",
+                    "alt": "Bootstrap",
+                    "width": 4,
+                    "height": 4
+                },
+                {
+                    "src": "/images/skills/frameworks/icons8-flutter-96.png",
+                    "alt": "Flutter",
+                    "width": 4,
+                    "height": 4
+                },
+                {
+                    "src": "/images/skills/frameworks/icons8-react-native-96.png",
+                    "alt": "React Native",
+                    "width": 4,
+                    "height": 4
+                },
+                {
+                    "src": "/images/skills/frameworks/nextjs-icon.png",
+                    "alt": "Next.js",
+                    "width": 4,
+                    "height": 4
+                },
+                {
+                    "src": "/images/skills/frameworks/icons8-nodejs-96.png",
+                    "alt": "Node.js",
+                    "width": 4,
+                    "height": 4
+                },
+                {
+                    "src": "/images/skills/frameworks/netFramework.png",
+                    "alt": ".NET Framework",
+                    "width": 4,
+                    "height": 4
+                },
+                {
+                    "src": "/images/skills/frameworks/icons8-spring-boot-96.png",
+                    "alt": "Spring Boot",
+                    "width": 4,
+                    "height": 4
+                }
+            ]
+        },
+        {
+            title: 'Data Science & AI:',
+            images: [        {
+                "src": "/images/skills/DS/icons8-pytorch-96.png",
+                "alt": "PyTorch",
+                "width": 4,
+                "height": 4
             },
             {
-                title: 'Frameworks:',
-                //description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-                // optional: leave the array empty if you don't want to display images
-                images: [
-                    {
-                        src: '/images/skills/frameworks/icons8-flask-100.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/frameworks/FastAPI (1).png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/frameworks/icons8-bootstrap-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/frameworks/icons8-flutter-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/frameworks/icons8-react-native-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/frameworks/nextjs-icon.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/frameworks/icons8-nodejs-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/frameworks/netFramework.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/frameworks/icons8-spring-boot-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                ]
+                "src": "/images/skills/DS/icons8-tensorflow-96.png",
+                "alt": "TensorFlow",
+                "width": 4,
+                "height": 4
             },
             {
-                title: 'Data Science & AI:',
-                //description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-                // optional: leave the array empty if you don't want to display images
-                images: [
-                    
-                    {
-                        src: '/images/skills/DS/icons8-pytorch-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/DS/icons8-tensorflow-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/DS/Scikit_learn_logo_small.svg.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/DS/images.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/DS/keras.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/DS/icons8-hugging-face-96.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                    {
-                        src: '/images/skills/DS/Apache_Spark_logo.svg.png',
-                        alt: 'Project image',
-                        width: 4,
-                        height: 4
-                    },
-                ]
+                "src": "/images/skills/DS/Scikit_learn_logo_small.svg.png",
+                "alt": "Scikit-learn",
+                "width": 4,
+                "height": 4
+            },
+            {
+                "src": "/images/skills/DS/images.png",
+                "alt": "Pandas",
+                "width": 4,
+                "height": 4
+            },
+            {
+                "src": "/images/skills/DS/keras.png",
+                "alt": "Keras",
+                "width": 4,
+                "height": 4
+            },
+            {
+                "src": "/images/skills/DS/icons8-hugging-face-96.png",
+                "alt": "Hugging Face",
+                "width": 4,
+                "height": 4
+            },
+            {
+                "src": "/images/skills/DS/Apache_Spark_logo.svg.png",
+                "alt": "Apache Spark",
+                "width": 4,
+                "height": 4
             }
         ]
-    }
+        }
+    ]
+}
+
 }
 
 /*const blog = {
