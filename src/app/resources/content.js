@@ -68,10 +68,10 @@ const about = {
     avatar: {
         display: true
     },
-    calendar: {
-        display: true,
-        link: 'https://cal.com'
-    },
+    // calendar: {
+    //     display: true,
+    //     link: 'https://cal.com'
+    // },
     intro: {
         display: true,
         title: 'Introduction',
@@ -118,7 +118,7 @@ const about = {
                     <>Implemented the back-end using MySQL and Symfony to manage candidate data and evaluation processes.</>,
                     <>Integrated candidate evaluation algorithms to identify and rank top talents effectively.</>
                 ],
-                images: [ 
+                images: [
                     {
                         src: '/images/projects/sotrafer/consulterConc.png',
                         alt: 'Project image',
@@ -144,7 +144,7 @@ const about = {
                     <>Utilized Flutter and Bootstrap for the front-end, and integrated the back-end using MongoDB, Node.js, and Flask.</>
 
                 ],
-                images: [ 
+                images: [
                     {
                         src: '/images/projects/medianet/R2 part2.png',
                         alt: 'Project image',
@@ -366,13 +366,67 @@ const about = {
             {
                 images: [ // optional: leave the array empty if you don't want to display images
                     {
+                        src: '/images/certifications/introLLM.pdf.png',
+                        alt: 'certification',
+                        width: 16,
+                        height: 9
+                    },
+                    {
+                        src: '/images/certifications/Coursera nlp.pdf.png',
+                        alt: 'certification',
+                        width: 16,
+                        height: 9
+                    },
+                    {
+                        src: '/images/certifications/Coursera ZVZV8ECJWWVS.pdf.png',
+                        alt: 'certification',
+                        width: 16,
+                        height: 9
+                    },
+                    {
+                        src: '/images/certifications/Coursera 2XY7WJPSMX16.pdf.png',
+                        alt: 'certification',
+                        width: 16,
+                        height: 9
+                    },
+                    {
+                        src: '/images/certifications/Coursera 5DHV2L06AXS4.pdf.png',
+                        alt: 'certification',
+                        width: 16,
+                        height: 9
+                    },
+                    {
                         src: '/images/certifications/sdgHonoris.png',
                         alt: 'certification',
                         width: 16,
                         height: 9
                     },
                     {
+                        src: '/images/certifications/Kassem Mohamed YAssine_attestation.pdf.png',
+                        alt: 'certification',
+                        width: 16,
+                        height: 9
+                    },
+                    {
+                        src: '/images/certifications/Certificate _ NVIDIA.pdf.png',
+                        alt: 'certification',
+                        width: 16,
+                        height: 9
+                    },
+                    {
                         src: '/images/certifications/mohamedyassinekassem-2223-ExamenCCNA--certificate.pdf.png',
+                        alt: 'certification',
+                        width: 16,
+                        height: 9
+                    },
+                    {
+                        src: '/images/certifications/Big_Data_Engineer___Mastery_Award_2021_Badge20230610-28-dolzph.pdf.png',
+                        alt: 'certification',
+                        width: 16,
+                        height: 9
+                    },
+                    {
+                        src: '/images/certifications/Big_Data_Engineer___Explorer_Award_2021_Badge20230610-28-vfy3at.pdf.png',
                         alt: 'certification',
                         width: 16,
                         height: 9
@@ -407,73 +461,73 @@ const gallery = {
     description: `A photo collection by ${person.name}`,
     // Images from https://pexels.com
     images: [
-        { 
-            src: '/images/gallery/80180.png', 
+        {
+            src: '/images/gallery/80180.png',
             alt: 'image',
             orientation: 'vertical'
         },
-        { 
-            src: '/images/gallery/6ab2f740-2d96-4323-a290-ebf27e0f401d.jpg', 
+        {
+            src: '/images/gallery/6ab2f740-2d96-4323-a290-ebf27e0f401d.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/448676635_874788048017451_8768546484821465645_n.jpg', 
+        {
+            src: '/images/gallery/448676635_874788048017451_8768546484821465645_n.jpg',
             alt: 'image',
             orientation: 'vertical'
         },
-        { 
-            src: '/images/gallery/784877b5-db5f-4002-b513-6f9cd1d97a17.jpg', 
+        {
+            src: '/images/gallery/784877b5-db5f-4002-b513-6f9cd1d97a17.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/109f154e-5af8-4307-8978-62d30b4f1166.jpg', 
+        {
+            src: '/images/gallery/109f154e-5af8-4307-8978-62d30b4f1166.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/d5293b26-afa1-4cbf-aa73-08feb25ecbb9.jpg', 
+        {
+            src: '/images/gallery/d5293b26-afa1-4cbf-aa73-08feb25ecbb9.jpg',
             alt: 'image',
             orientation: 'vertical'
         },
-        { 
-            src: '/images/gallery/1721121656803.jpg', 
+        {
+            src: '/images/gallery/1721121656803.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/IMG_9604.png', 
+        {
+            src: '/images/gallery/IMG_9604.png',
             alt: 'image',
             orientation: 'vertical'
         },
-        { 
-            src: '/images/gallery/0194acc3-4d01-4fd1-8083-d19c99f03a79.jpg', 
+        {
+            src: '/images/gallery/0194acc3-4d01-4fd1-8083-d19c99f03a79.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/146561084_3701670509878696_3860420190675881665_n.jpg', 
+        {
+            src: '/images/gallery/146561084_3701670509878696_3860420190675881665_n.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/448676635_874788048017451_8768546484821465645_n.jpg', 
+        {
+            src: '/images/gallery/448676635_874788048017451_8768546484821465645_n.jpg',
             alt: 'image',
             orientation: 'vertical'
         },
-        { 
-            src: '/images/gallery/IMG_6305.JPG', 
+        {
+            src: '/images/gallery/IMG_6305.JPG',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/IMG_6345.JPG', 
+        {
+            src: '/images/gallery/IMG_6345.JPG',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/IMG_6142.JPG', 
+        {
+            src: '/images/gallery/IMG_6142.JPG',
             alt: 'image',
             orientation: 'horizontal'
         },
