@@ -420,7 +420,9 @@ export default function About(
                                             </Flex>
                                         )}
                                     </Flex>
+                                    
                                 ))}
+                                <br />
                             </Flex>
                         </>
                     )}
