@@ -4,6 +4,7 @@ import TableOfContents from '@/components/about/TableOfContents';
 import styles from '@/components/about/about.module.scss'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
+import { Certificate } from 'crypto';
 
 export async function generateMetadata(
     {params: {locale}}: { params: { locale: string }}
@@ -64,6 +65,11 @@ export default function About(
             title: about.technical.title,
             display: about.technical.display,
             items: about.technical.skills.map(skill => skill.title)
+        },
+        { 
+            title: about.certification.title,
+            display: about.technical.display,
+            items: about.certification.certifications.map(certification => certification.title)
         },
     ]
     return (
@@ -312,59 +318,59 @@ export default function About(
                         </>
                     )}
 
-{about.studies.display && (
-    <>
-        <Heading
-            as="h2"
-            id={about.studies.title}
-            variant="display-strong-s"
-            marginBottom="m">
-            {about.studies.title}
-        </Heading>
-        <Flex
-            direction="column"
-            fillWidth gap="l" marginBottom="40">
-            {about.studies.institutions.map((institution, index) => (
-                <Flex
-                    key={`${institution.name}-${index}`}
-                    fillWidth gap="4"
-                    direction="column">
-                    <Text
-                        id={institution.name}
-                        variant="heading-strong-l">
-                        {institution.name}
-                    </Text>
-                    <Text
-                        variant="heading-default-xs"
-                        onBackground="neutral-weak">
-                        {institution.description}
-                    </Text>
-                    {institution.images && institution.images.length > 0 && (
-                        <Flex
-                            fillWidth paddingTop="m" gap="12"
-                            wrap>
-                            {institution.images.map((image, index) => (
-                                <Flex
-                                    key={index}
-                                    border="neutral-medium"
-                                    borderStyle="solid-1"
-                                    radius="m"
-                                    minWidth={image.width} height={image.height}>
-                                    <SmartImage
-                                        enlarge
-                                        radius="m"
-                                        sizes={image.width.toString()}
-                                        alt={image.alt}
-                                        src={image.src}/>
-                                </Flex>
-                            ))}
-                        </Flex>
+                    {about.studies.display && (
+                        <>
+                            <Heading
+                                as="h2"
+                                id={about.studies.title}
+                                variant="display-strong-s"
+                                marginBottom="m">
+                                {about.studies.title}
+                            </Heading>
+                            <Flex
+                                direction="column"
+                                fillWidth gap="l" marginBottom="40">
+                                {about.studies.institutions.map((institution, index) => (
+                                    <Flex
+                                        key={`${institution.name}-${index}`}
+                                        fillWidth gap="4"
+                                        direction="column">
+                                        <Text
+                                            id={institution.name}
+                                            variant="heading-strong-l">
+                                            {institution.name}
+                                        </Text>
+                                        <Text
+                                            variant="heading-default-xs"
+                                            onBackground="neutral-weak">
+                                            {institution.description}
+                                        </Text>
+                                        {institution.images && institution.images.length > 0 && (
+                                            <Flex
+                                                fillWidth paddingTop="m" gap="12"
+                                                wrap>
+                                                {institution.images.map((image, index) => (
+                                                    <Flex
+                                                        key={index}
+                                                        border="neutral-medium"
+                                                        borderStyle="solid-1"
+                                                        radius="m"
+                                                        minWidth={image.width} height={image.height}>
+                                                        <SmartImage
+                                                            enlarge
+                                                            radius="m"
+                                                            sizes={image.width.toString()}
+                                                            alt={image.alt}
+                                                            src={image.src}/>
+                                                    </Flex>
+                                                ))}
+                                            </Flex>
+                                        )}
+                                    </Flex>
+                                ))}
+                            </Flex>
+                        </>
                     )}
-                </Flex>
-            ))}
-        </Flex>
-    </>
-)}
 
 
                     { about.technical.display && (
@@ -397,6 +403,60 @@ export default function About(
                                                 fillWidth paddingTop="m" gap="12"
                                                 wrap>
                                                 {skill.images.map((image, index) => (
+                                                    <Flex
+                                                        key={index}
+                                                        border="neutral-medium"
+                                                        borderStyle="solid-1"
+                                                        radius="m"
+                                                        minWidth={image.width} height={image.height}>
+                                                        <SmartImage
+                                                            enlarge
+                                                            radius="m"
+                                                            sizes={image.width.toString()}
+                                                            alt={image.alt}
+                                                            src={image.src}/>
+                                                    </Flex>
+                                                ))}
+                                            </Flex>
+                                        )}
+                                    </Flex>
+                                ))}
+                            </Flex>
+                        </>
+                    )}
+
+                    {about.certification.display && (
+                        <>
+                            <Heading
+                                as="h2"
+                                id={about.certification.title}
+                                variant="display-strong-s"
+                                marginBottom="m">
+                                {about.certification.title}
+                            </Heading>
+                            <Flex
+                                direction="column"
+                                fillWidth gap="l" marginBottom="40">
+                                {about.certification.certifications.map((certification, index) => (
+                                    <Flex
+                                        key={`${certification.name}-${index}`}
+                                        fillWidth gap="4"
+                                        direction="column">
+                                        <Text
+                                            id={certification.name}
+                                            variant="heading-strong-l">
+                                            {certification.name}
+                                        </Text>
+                                        <Text
+                                            variant="heading-default-xs"
+                                            onBackground="neutral-weak">
+                                            {certification.description}
+                                        </Text>
+                                        {certification.images && certification.images.length > 0 && (
+                                            <Flex
+                                                fillWidth paddingTop="m" gap="12"
+                                                wrap>
+                                                {certification.images.map((image, index) => (
                                                     <Flex
                                                         key={index}
                                                         border="neutral-medium"
