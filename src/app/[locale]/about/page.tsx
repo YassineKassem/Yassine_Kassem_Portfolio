@@ -128,6 +128,23 @@ export default function About(
                 name="globe" />
             {person.location}
         </Flex>
+                    {/* Add the CV download button */}
+                    {person.cv && (
+                <Flex justifyContent="center" paddingBottom="16">
+                    <Button
+                    	data-border="rounded"
+                        href={person.cv} // Path to the CV file
+                        download="Mohamed_Yassine_Kassem_CV.pdf" // Suggested download name
+                        label="Download my CV"
+                        variant="tertiary"
+                        size="m"
+                        target="_blank" // Opens the link in a new tab
+                        rel="noopener noreferrer" // Adds security to the new tab link
+
+
+                    />
+                </Flex>
+            )}
         {person.languages.length > 0 && (
             <Flex
                 wrap
