@@ -12,7 +12,7 @@ const person = {
     avatar:    '/images/avatar.jpg',
     location:  'Africa/Tunis',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
     languages: ['English', 'French'], // optional: Leave the array empty if you don't want to display languages
-    numbers: ['+216 92 66 15 15','+216 25 70 57 31'],
+    numbers: ['+216 92 66 15 15'],
     cv: '/CV/KASSEM_yassine_CV.pdf'
     
 
